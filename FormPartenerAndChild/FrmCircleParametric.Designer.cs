@@ -1,0 +1,210 @@
+﻿namespace FormPartenerAndChild
+{
+    partial class FrmCircleParametric
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.components = new System.ComponentModel.Container();
+            this.pnlCanvas = new System.Windows.Forms.Panel();
+            this.lblRadius = new System.Windows.Forms.Label();
+            this.txtRadius = new System.Windows.Forms.TextBox();
+            this.btnDraw = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.lblCenterX = new System.Windows.Forms.Label();
+            this.txtCenterX = new System.Windows.Forms.TextBox();
+            this.lblCenterY = new System.Windows.Forms.Label();
+            this.txtCenterY = new System.Windows.Forms.TextBox();
+            this.lblAngle = new System.Windows.Forms.Label();
+            this.txtAngle = new System.Windows.Forms.TextBox();
+            this.lblZoom = new System.Windows.Forms.Label();
+            this.trkZoom = new System.Windows.Forms.TrackBar();
+            ((System.ComponentModel.ISupportInitialize)(this.trkZoom)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // pnlCanvas
+            // 
+            this.pnlCanvas.BackColor = System.Drawing.Color.White;
+            this.pnlCanvas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlCanvas.Location = new System.Drawing.Point(12, 12);
+            this.pnlCanvas.Name = "pnlCanvas";
+            this.pnlCanvas.Size = new System.Drawing.Size(600, 400);
+            this.pnlCanvas.TabIndex = 0;
+            this.pnlCanvas.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlCanvas_Paint);
+            // 
+            // lblRadius
+            // 
+            this.lblRadius.AutoSize = true;
+            this.lblRadius.Location = new System.Drawing.Point(12, 420);
+            this.lblRadius.Name = "lblRadius";
+            this.lblRadius.Size = new System.Drawing.Size(44, 13);
+            this.lblRadius.TabIndex = 1;
+            this.lblRadius.Text = "Radius:";
+            // 
+            // txtRadius
+            // 
+            this.txtRadius.Location = new System.Drawing.Point(62, 417);
+            this.txtRadius.Name = "txtRadius";
+            this.txtRadius.Size = new System.Drawing.Size(80, 20);
+            this.txtRadius.TabIndex = 2;
+            this.txtRadius.Text = "50";
+            // 
+            // btnDraw
+            // 
+            this.btnDraw.Location = new System.Drawing.Point(148, 415);
+            this.btnDraw.Name = "btnDraw";
+            this.btnDraw.Size = new System.Drawing.Size(75, 23);
+            this.btnDraw.TabIndex = 3;
+            this.btnDraw.Text = "Draw";
+            this.btnDraw.UseVisualStyleBackColor = true;
+            this.btnDraw.Click += new System.EventHandler(this.btnDraw_Click);
+            // 
+            // btnClear
+            // 
+            this.btnClear.Location = new System.Drawing.Point(229, 415);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(75, 23);
+            this.btnClear.TabIndex = 4;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // lblCenterX
+            // 
+            this.lblCenterX.AutoSize = true;
+            this.lblCenterX.Location = new System.Drawing.Point(320, 420);
+            this.lblCenterX.Name = "lblCenterX";
+            this.lblCenterX.Size = new System.Drawing.Size(54, 13);
+            this.lblCenterX.TabIndex = 5;
+            this.lblCenterX.Text = "Center X:";
+            // 
+            // txtCenterX
+            // 
+            this.txtCenterX.Location = new System.Drawing.Point(380, 417);
+            this.txtCenterX.Name = "txtCenterX";
+            this.txtCenterX.Size = new System.Drawing.Size(60, 20);
+            this.txtCenterX.TabIndex = 6;
+            this.txtCenterX.Text = "0";
+            // 
+            // lblCenterY
+            // 
+            this.lblCenterY.AutoSize = true;
+            this.lblCenterY.Location = new System.Drawing.Point(450, 420);
+            this.lblCenterY.Name = "lblCenterY";
+            this.lblCenterY.Size = new System.Drawing.Size(54, 13);
+            this.lblCenterY.TabIndex = 7;
+            this.lblCenterY.Text = "Center Y:";
+            // 
+            // txtCenterY
+            // 
+            this.txtCenterY.Location = new System.Drawing.Point(510, 417);
+            this.txtCenterY.Name = "txtCenterY";
+            this.txtCenterY.Size = new System.Drawing.Size(60, 20);
+            this.txtCenterY.TabIndex = 8;
+            this.txtCenterY.Text = "0";
+            // 
+            // lblAngle
+            // 
+            this.lblAngle.AutoSize = true;
+            this.lblAngle.Location = new System.Drawing.Point(580, 420);
+            this.lblAngle.Name = "lblAngle";
+            this.lblAngle.Size = new System.Drawing.Size(38, 13);
+            this.lblAngle.TabIndex = 9;
+            this.lblAngle.Text = "Angle:";
+            // 
+            // txtAngle
+            // 
+            this.txtAngle.Location = new System.Drawing.Point(620, 417);
+            this.txtAngle.Name = "txtAngle";
+            this.txtAngle.Size = new System.Drawing.Size(60, 20);
+            this.txtAngle.TabIndex = 10;
+            this.txtAngle.Text = "360";
+            // 
+            // lblZoom
+            // 
+            this.lblZoom.AutoSize = true;
+            this.lblZoom.Location = new System.Drawing.Point(690, 420);
+            this.lblZoom.Name = "lblZoom";
+            this.lblZoom.Size = new System.Drawing.Size(63, 13);
+            this.lblZoom.TabIndex = 11;
+            this.lblZoom.Text = "Zoom: 100%";
+            // 
+            // trkZoom
+            // 
+            this.trkZoom.Location = new System.Drawing.Point(760, 412);
+            this.trkZoom.Maximum = 400;
+            this.trkZoom.Minimum = 10;
+            this.trkZoom.Name = "trkZoom";
+            this.trkZoom.Size = new System.Drawing.Size(28, 45);
+            this.trkZoom.TabIndex = 12;
+            this.trkZoom.TickFrequency = 10;
+            this.trkZoom.Value = 100;
+            this.trkZoom.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.trkZoom.Scroll += new System.EventHandler(this.trkZoom_Scroll);
+            // 
+            // FrmCircleParametric
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 480);
+            this.Controls.Add(this.trkZoom);
+            this.Controls.Add(this.lblZoom);
+            this.Controls.Add(this.txtAngle);
+            this.Controls.Add(this.lblAngle);
+            this.Controls.Add(this.txtCenterY);
+            this.Controls.Add(this.lblCenterY);
+            this.Controls.Add(this.txtCenterX);
+            this.Controls.Add(this.lblCenterX);
+            this.Controls.Add(this.btnClear);
+            this.Controls.Add(this.btnDraw);
+            this.Controls.Add(this.txtRadius);
+            this.Controls.Add(this.lblRadius);
+            this.Controls.Add(this.pnlCanvas);
+            this.Name = "FrmCircleParametric";
+            this.Text = "Circle - Parametric";
+            ((System.ComponentModel.ISupportInitialize)(this.trkZoom)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Panel pnlCanvas;
+        private System.Windows.Forms.Label lblRadius;
+        private System.Windows.Forms.TextBox txtRadius;
+        private System.Windows.Forms.Button btnDraw;
+        private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Label lblCenterX;
+        private System.Windows.Forms.TextBox txtCenterX;
+        private System.Windows.Forms.Label lblCenterY;
+        private System.Windows.Forms.TextBox txtCenterY;
+        private System.Windows.Forms.Label lblAngle;
+        private System.Windows.Forms.TextBox txtAngle;
+        private System.Windows.Forms.Label lblZoom;
+        private System.Windows.Forms.TrackBar trkZoom;
+    }
+}

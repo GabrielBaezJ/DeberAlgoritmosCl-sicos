@@ -1,0 +1,54 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace FormPartenerAndChild
+{
+    public partial class FrmCircle : Form
+    {
+        private CCircle circle;
+
+        public FrmCircle()
+        {
+            InitializeComponent();
+            circle = new CCircle();
+        }
+
+        private void btnDraw_Click(object sender, EventArgs e)
+        {
+            if (int.TryParse(txtRadius.Text, out int radius) && radius > 0)
+            {
+                circle.points.Clear();
+                int centerX = pnlCanvas.Width / 2;
+                int centerY = pnlCanvas.Height / 2;
+                circle.CircleMidPoint(centerX, centerY, radius);
+                pnlCanvas.Invalidate();
+            }
+            else
+            {
+                MessageBox.Show("Ingrese un radio válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            circle.points.Clear();
+            pnlCanvas.Invalidate();
+        }
+
+        private void pnlCanvas_Paint(object sender, PaintEventArgs e)
+        {
+            e.Graphics.Clear(Color.White);
+            foreach (Point p in circle.points)
+            {
+                e.Graphics.FillRectangle(Brushes.Black, p.X, p.Y, 1, 1);
+            }
+        }
+    }
+}

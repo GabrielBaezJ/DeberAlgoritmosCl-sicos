@@ -1,0 +1,99 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Linq;
+using System.Windows.Forms;
+
+namespace FormPartenerAndChild
+{
+    public partial class frmMidpointCircle : Form
+    {
+        private CMidpointCircleAlgorithm algo;
+        private List<Point> points = new List<Point>();
+        private int lastCenterX = -1;
+        private int lastCenterY = -1;
+
+        public frmMidpointCircle()
+        {
+            InitializeComponent();
+            algo = new CMidpointCircleAlgorithm();
+
+            // valores por defecto
+            txtCenterX.Text = (pnlCanvas.Width / 2).ToString();
+            txtCenterY.Text = (pnlCanvas.Height / 2).ToString();
+            txtRadius.Text = "50";
+            lblPixelCount.Text = "Pixels: 0";
+        }
+
+        private void btnDraw_Click(object sender, EventArgs e)
+        {
+            if (!int.TryParse(txtRadius.Text, out int r) || r <= 0)
+            {
+                MessageBox.Show("Ingrese un radio válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (!int.TryParse(txtCenterX.Text, out int xc) || !int.TryParse(txtCenterY.Text, out int yc))
+            {
+                MessageBox.Show("Ingrese centro válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            points = algo.GenerateCirclePoints(xc, yc, r);
+            lastCenterX = xc;
+            lastCenterY = yc;
+
+            // mostrar lista y conteo
+            var unique = points.Distinct().OrderBy(p => p.X).ThenBy(p => p.Y).ToList();
+            lstPixels.BeginUpdate();
+            lstPixels.Items.Clear();
+            foreach (var p in unique)
+            {
+                lstPixels.Items.Add($"{p.X}, {p.Y}");
+            }
+            lstPixels.EndUpdate();
+            lblPixelCount.Text = $"Pixels: {unique.Count}";
+
+            pnlCanvas.Invalidate();
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            points.Clear();
+            lstPixels.Items.Clear();
+            lblPixelCount.Text = "Pixels: 0";
+            pnlCanvas.Invalidate();
+        }
+
+        private void pnlCanvas_Paint(object sender, PaintEventArgs e)
+        {
+            e.Graphics.Clear(Color.White);
+
+            int grid = 10;
+            using (var pen = new Pen(Color.LightGray))
+            {
+                for (int x = 0; x <= pnlCanvas.Width; x += grid)
+                    e.Graphics.DrawLine(pen, x, 0, x, pnlCanvas.Height);
+                for (int y = 0; y <= pnlCanvas.Height; y += grid)
+                    e.Graphics.DrawLine(pen, 0, y, pnlCanvas.Width, y);
+            }
+
+            if (lastCenterX >= 0 && lastCenterY >= 0)
+            {
+                using (var axisPen = new Pen(Color.Red, 1))
+                {
+                    e.Graphics.DrawLine(axisPen, lastCenterX, 0, lastCenterX, pnlCanvas.Height);
+                    e.Graphics.DrawLine(axisPen, 0, lastCenterY, pnlCanvas.Width, lastCenterY);
+                }
+            }
+
+            foreach (var p in points.Distinct())
+            {
+                if (p.X >= 0 && p.X < pnlCanvas.Width && p.Y >= 0 && p.Y < pnlCanvas.Height)
+                {
+                    e.Graphics.FillRectangle(Brushes.Black, p.X, p.Y, 1, 1);
+                }
+            }
+        }
+    }
+}
