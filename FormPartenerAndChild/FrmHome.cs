@@ -65,5 +65,12 @@ namespace FormPartenerAndChild
             frm.MdiParent = this;
             frm.Show();
         }
+
+        private void floodFillToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmFloodFill frm = new FrmFloodFill();
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
 }

@@ -1,0 +1,87 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Linq;
+using System.Windows.Forms;
+
+namespace FormPartenerAndChild
+{
+    public partial class FrmFloodFill : Form
+    {
+        private CFloodFillAlgorithm algo;
+        private Bitmap canvas;
+        private bool floodFillMode = false;
+        private Color fillColor = Color.Red;
+
+        public FrmFloodFill()
+        {
+            InitializeComponent();
+            algo = new CFloodFillAlgorithm();
+            InitializeCanvas();
+            pnlSelectedColor.BackColor = fillColor;
+        }
+
+        private void InitializeCanvas()
+        {
+            canvas = new Bitmap(600, 400);
+            using (Graphics g = Graphics.FromImage(canvas))
+            {
+                g.Clear(Color.White);
+            }
+        }
+
+        private void btnDrawCircle_Click(object sender, EventArgs e)
+        {
+            floodFillMode = false;
+            MessageBox.Show("Click and drag on canvas to draw a circle.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void btnDrawRectangle_Click(object sender, EventArgs e)
+        {
+            floodFillMode = false;
+            MessageBox.Show("Click and drag on canvas to draw a rectangle.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void btnFloodFill_Click(object sender, EventArgs e)
+        {
+            floodFillMode = true;
+            lblInstruction.Text = "Click on canvas to apply flood fill";
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            InitializeCanvas();
+            floodFillMode = false;
+            lblInstruction.Text = "Canvas cleared";
+            pnlCanvas.Invalidate();
+        }
+
+        private void btnSelectColor_Click(object sender, EventArgs e)
+        {
+            if (colorDialog.ShowDialog() == DialogResult.OK)
+            {
+                fillColor = colorDialog.Color;
+                pnlSelectedColor.BackColor = fillColor;
+            }
+        }
+
+        private void pnlCanvas_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (floodFillMode && canvas != null)
+            {
+                // Aplicar flood fill en la posición donde se hizo clic
+                algo.FloodFill(canvas, e.X, e.Y, fillColor);
+                pnlCanvas.Invalidate();
+                lblInstruction.Text = $"Flood fill applied at ({e.X}, {e.Y})";
+            }
+        }
+
+        private void pnlCanvas_Paint(object sender, PaintEventArgs e)
+        {
+            if (canvas != null)
+            {
+                e.Graphics.DrawImageUnscaled(canvas, 0, 0);
+            }
+        }
+    }
+}

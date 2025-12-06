@@ -50,6 +50,7 @@
     <Compile Include="CBresenhamCircle.cs" />
     <Compile Include="CCircle.cs" />
     <Compile Include="CDDAAlgorithm.cs" />
+    <Compile Include="CFloodFillAlgorithm.cs" />
     <Compile Include="CMidPointAlgorithm.cs" />
     <Compile Include="CMidpointCircleAlgorithm.cs" />
     <Compile Include="CParametricCircleAlgorithm.cs" />
@@ -88,6 +89,12 @@
     </Compile>
     <Compile Include="FrmDDA.Designer.cs">
       <DependentUpon>FrmDDA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmFloodFill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmFloodFill.Designer.cs">
+      <DependentUpon>FrmFloodFill.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmHome.cs">
       <SubType>Form</SubType>

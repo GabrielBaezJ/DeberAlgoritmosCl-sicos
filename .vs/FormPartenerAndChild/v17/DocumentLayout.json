@@ -3,12 +3,28 @@
   "WorkspaceRootPath": "D:\\Documents\\Universidad_ESPE\\Semestre 7\\Computaci\u00F3n Gr\u00E1fica\\Parcial 2\\FormPartenerAndChild\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A278CD6D-DE57-4806-844F-428FE7321C86}|FormPartenerAndChild\\FormPartenerAndChild.csproj|D:\\Documents\\Universidad_ESPE\\Semestre 7\\Computaci\u00F3n Gr\u00E1fica\\Parcial 2\\FormPartenerAndChild\\formpartenerandchild\\frmhome.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A278CD6D-DE57-4806-844F-428FE7321C86}|FormPartenerAndChild\\FormPartenerAndChild.csproj|d:\\documents\\universidad_espe\\semestre 7\\computaci\u00F3n gr\u00E1fica\\parcial 2\\formpartenerandchild\\formpartenerandchild\\frmhome.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A278CD6D-DE57-4806-844F-428FE7321C86}|FormPartenerAndChild\\FormPartenerAndChild.csproj|solutionrelative:formpartenerandchild\\frmhome.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A278CD6D-DE57-4806-844F-428FE7321C86}|FormPartenerAndChild\\FormPartenerAndChild.csproj|D:\\Documents\\Universidad_ESPE\\Semestre 7\\Computaci\u00F3n Gr\u00E1fica\\Parcial 2\\FormPartenerAndChild\\formpartenerandchild\\frmhome.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{A278CD6D-DE57-4806-844F-428FE7321C86}|FormPartenerAndChild\\FormPartenerAndChild.csproj|solutionrelative:formpartenerandchild\\frmhome.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A278CD6D-DE57-4806-844F-428FE7321C86}|FormPartenerAndChild\\FormPartenerAndChild.csproj|d:\\documents\\universidad_espe\\semestre 7\\computaci\u00F3n gr\u00E1fica\\parcial 2\\formpartenerandchild\\formpartenerandchild\\frmfloodfill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A278CD6D-DE57-4806-844F-428FE7321C86}|FormPartenerAndChild\\FormPartenerAndChild.csproj|solutionrelative:formpartenerandchild\\frmfloodfill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A278CD6D-DE57-4806-844F-428FE7321C86}|FormPartenerAndChild\\FormPartenerAndChild.csproj|d:\\documents\\universidad_espe\\semestre 7\\computaci\u00F3n gr\u00E1fica\\parcial 2\\formpartenerandchild\\formpartenerandchild\\cfloodfillalgorithm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A278CD6D-DE57-4806-844F-428FE7321C86}|FormPartenerAndChild\\FormPartenerAndChild.csproj|solutionrelative:formpartenerandchild\\cfloodfillalgorithm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A278CD6D-DE57-4806-844F-428FE7321C86}|FormPartenerAndChild\\FormPartenerAndChild.csproj|d:\\documents\\universidad_espe\\semestre 7\\computaci\u00F3n gr\u00E1fica\\parcial 2\\formpartenerandchild\\formpartenerandchild\\frmfloodfill.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A278CD6D-DE57-4806-844F-428FE7321C86}|FormPartenerAndChild\\FormPartenerAndChild.csproj|solutionrelative:formpartenerandchild\\frmfloodfill.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A278CD6D-DE57-4806-844F-428FE7321C86}|FormPartenerAndChild\\FormPartenerAndChild.csproj|d:\\documents\\universidad_espe\\semestre 7\\computaci\u00F3n gr\u00E1fica\\parcial 2\\formpartenerandchild\\formpartenerandchild\\frmfloodfill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A278CD6D-DE57-4806-844F-428FE7321C86}|FormPartenerAndChild\\FormPartenerAndChild.csproj|solutionrelative:formpartenerandchild\\frmfloodfill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -28,7 +44,7 @@
               "RelativeDocumentMoniker": "FormPartenerAndChild\\FrmHome.cs",
               "ToolTip": "D:\\Documents\\Universidad_ESPE\\Semestre 7\\Computaci\u00F3n Gr\u00E1fica\\Parcial 2\\FormPartenerAndChild\\FormPartenerAndChild\\FrmHome.cs",
               "RelativeToolTip": "FormPartenerAndChild\\FrmHome.cs",
-              "ViewState": "AgIAADUAAAAAAAAAAAAIwEEAAAAXAAAAAAAAAA==",
+              "ViewState": "AgIAADwAAAAAAAAAAAAwwEgAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-27T14:43:33.611Z",
               "IsPinned": true,
@@ -46,6 +62,57 @@
               "WhenOpened": "2025-11-27T14:38:42.416Z",
               "IsPinned": true,
               "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "FrmFloodFill.Designer.cs",
+              "DocumentMoniker": "D:\\Documents\\Universidad_ESPE\\Semestre 7\\Computaci\u00F3n Gr\u00E1fica\\Parcial 2\\FormPartenerAndChild\\FormPartenerAndChild\\FrmFloodFill.Designer.cs",
+              "RelativeDocumentMoniker": "FormPartenerAndChild\\FrmFloodFill.Designer.cs",
+              "ToolTip": "D:\\Documents\\Universidad_ESPE\\Semestre 7\\Computaci\u00F3n Gr\u00E1fica\\Parcial 2\\FormPartenerAndChild\\FormPartenerAndChild\\FrmFloodFill.Designer.cs",
+              "RelativeToolTip": "FormPartenerAndChild\\FrmFloodFill.Designer.cs",
+              "ViewState": "AgIAAKkAAAAAAAAAAABRwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-06T04:44:03.984Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CFloodFillAlgorithm.cs",
+              "DocumentMoniker": "D:\\Documents\\Universidad_ESPE\\Semestre 7\\Computaci\u00F3n Gr\u00E1fica\\Parcial 2\\FormPartenerAndChild\\FormPartenerAndChild\\CFloodFillAlgorithm.cs",
+              "RelativeDocumentMoniker": "FormPartenerAndChild\\CFloodFillAlgorithm.cs",
+              "ToolTip": "D:\\Documents\\Universidad_ESPE\\Semestre 7\\Computaci\u00F3n Gr\u00E1fica\\Parcial 2\\FormPartenerAndChild\\FormPartenerAndChild\\CFloodFillAlgorithm.cs",
+              "RelativeToolTip": "FormPartenerAndChild\\CFloodFillAlgorithm.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAIwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-06T04:41:32.07Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FrmFloodFill.cs [Design]",
+              "DocumentMoniker": "D:\\Documents\\Universidad_ESPE\\Semestre 7\\Computaci\u00F3n Gr\u00E1fica\\Parcial 2\\FormPartenerAndChild\\FormPartenerAndChild\\FrmFloodFill.cs",
+              "RelativeDocumentMoniker": "FormPartenerAndChild\\FrmFloodFill.cs",
+              "ToolTip": "D:\\Documents\\Universidad_ESPE\\Semestre 7\\Computaci\u00F3n Gr\u00E1fica\\Parcial 2\\FormPartenerAndChild\\FormPartenerAndChild\\FrmFloodFill.cs [Design]",
+              "RelativeToolTip": "FormPartenerAndChild\\FrmFloodFill.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-06T04:41:11.998Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "FrmFloodFill.cs",
+              "DocumentMoniker": "D:\\Documents\\Universidad_ESPE\\Semestre 7\\Computaci\u00F3n Gr\u00E1fica\\Parcial 2\\FormPartenerAndChild\\FormPartenerAndChild\\FrmFloodFill.cs",
+              "RelativeDocumentMoniker": "FormPartenerAndChild\\FrmFloodFill.cs",
+              "ToolTip": "D:\\Documents\\Universidad_ESPE\\Semestre 7\\Computaci\u00F3n Gr\u00E1fica\\Parcial 2\\FormPartenerAndChild\\FormPartenerAndChild\\FrmFloodFill.cs",
+              "RelativeToolTip": "FormPartenerAndChild\\FrmFloodFill.cs",
+              "ViewState": "AgIAANQAAAAAAAAAAABRwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-06T04:44:21.185Z",
+              "EditorCaption": ""
             }
           ]
         }

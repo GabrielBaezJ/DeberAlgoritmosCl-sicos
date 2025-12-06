@@ -38,6 +38,8 @@
             this.círculoPuntoMedioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.círculoAlgoritmoParamétricoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.círculoBresenhamToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rellenoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.floodFillToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,7 +47,8 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lineasToolStripMenuItem,
-            this.figurasToolStripMenuItem});
+            this.figurasToolStripMenuItem,
+            this.rellenoToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
@@ -65,21 +68,21 @@
             // ddaToolStripMenuItem
             // 
             this.ddaToolStripMenuItem.Name = "ddaToolStripMenuItem";
-            this.ddaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ddaToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.ddaToolStripMenuItem.Text = "DDA";
             this.ddaToolStripMenuItem.Click += new System.EventHandler(this.ddaToolStripMenuItem_Click);
             // 
             // bresenhamToolStripMenuItem
             // 
             this.bresenhamToolStripMenuItem.Name = "bresenhamToolStripMenuItem";
-            this.bresenhamToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.bresenhamToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.bresenhamToolStripMenuItem.Text = "Bresenham";
             this.bresenhamToolStripMenuItem.Click += new System.EventHandler(this.bresenhamToolStripMenuItem_Click);
             // 
             // puntoMedioToolStripMenuItem
             // 
             this.puntoMedioToolStripMenuItem.Name = "puntoMedioToolStripMenuItem";
-            this.puntoMedioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.puntoMedioToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.puntoMedioToolStripMenuItem.Text = "Punto Medio";
             this.puntoMedioToolStripMenuItem.Click += new System.EventHandler(this.puntoMedioToolStripMenuItem_Click);
             // 
@@ -122,6 +125,21 @@
             this.círculoBresenhamToolStripMenuItem.Text = "Círculo - Bresenham";
             this.círculoBresenhamToolStripMenuItem.Click += new System.EventHandler(this.círculoBresenhamToolStripMenuItem_Click);
             // 
+            // rellenoToolStripMenuItem
+            // 
+            this.rellenoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.floodFillToolStripMenuItem});
+            this.rellenoToolStripMenuItem.Name = "rellenoToolStripMenuItem";
+            this.rellenoToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
+            this.rellenoToolStripMenuItem.Text = "Relleno";
+            // 
+            // floodFillToolStripMenuItem
+            // 
+            this.floodFillToolStripMenuItem.Name = "floodFillToolStripMenuItem";
+            this.floodFillToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.floodFillToolStripMenuItem.Text = "FloodFill";
+            this.floodFillToolStripMenuItem.Click += new System.EventHandler(this.floodFillToolStripMenuItem_Click);
+            // 
             // FrmHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -151,5 +169,7 @@
         private System.Windows.Forms.ToolStripMenuItem círculoPuntoMedioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem círculoAlgoritmoParamétricoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem círculoBresenhamToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem rellenoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem floodFillToolStripMenuItem;
     }
 }
