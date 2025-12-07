@@ -40,6 +40,10 @@
             this.círculoBresenhamToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rellenoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.floodFillToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.scanLineFillToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.boundaryFillToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.recorteDeLíneasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cohenSutherlandToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,7 +52,8 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lineasToolStripMenuItem,
             this.figurasToolStripMenuItem,
-            this.rellenoToolStripMenuItem});
+            this.rellenoToolStripMenuItem,
+            this.recorteDeLíneasToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
@@ -128,7 +133,9 @@
             // rellenoToolStripMenuItem
             // 
             this.rellenoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.floodFillToolStripMenuItem});
+            this.floodFillToolStripMenuItem,
+            this.scanLineFillToolStripMenuItem,
+            this.boundaryFillToolStripMenuItem});
             this.rellenoToolStripMenuItem.Name = "rellenoToolStripMenuItem";
             this.rellenoToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
             this.rellenoToolStripMenuItem.Text = "Relleno";
@@ -139,6 +146,35 @@
             this.floodFillToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.floodFillToolStripMenuItem.Text = "FloodFill";
             this.floodFillToolStripMenuItem.Click += new System.EventHandler(this.floodFillToolStripMenuItem_Click);
+            // 
+            // scanLineFillToolStripMenuItem
+            // 
+            this.scanLineFillToolStripMenuItem.Name = "scanLineFillToolStripMenuItem";
+            this.scanLineFillToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.scanLineFillToolStripMenuItem.Text = "Scan Line Fill";
+            this.scanLineFillToolStripMenuItem.Click += new System.EventHandler(this.scanLineFillToolStripMenuItem_Click);
+            // 
+            // boundaryFillToolStripMenuItem
+            // 
+            this.boundaryFillToolStripMenuItem.Name = "boundaryFillToolStripMenuItem";
+            this.boundaryFillToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.boundaryFillToolStripMenuItem.Text = "Boundary Fill";
+            this.boundaryFillToolStripMenuItem.Click += new System.EventHandler(this.boundaryFillToolStripMenuItem_Click);
+            // 
+            // recorteDeLíneasToolStripMenuItem
+            // 
+            this.recorteDeLíneasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cohenSutherlandToolStripMenuItem});
+            this.recorteDeLíneasToolStripMenuItem.Name = "recorteDeLíneasToolStripMenuItem";
+            this.recorteDeLíneasToolStripMenuItem.Size = new System.Drawing.Size(111, 20);
+            this.recorteDeLíneasToolStripMenuItem.Text = "Recorte de Líneas";
+            // 
+            // cohenSutherlandToolStripMenuItem
+            // 
+            this.cohenSutherlandToolStripMenuItem.Name = "cohenSutherlandToolStripMenuItem";
+            this.cohenSutherlandToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cohenSutherlandToolStripMenuItem.Text = "Cohen - Sutherland";
+            this.cohenSutherlandToolStripMenuItem.Click += new System.EventHandler(this.cohenSutherlandToolStripMenuItem_Click);
             // 
             // FrmHome
             // 
@@ -171,5 +207,9 @@
         private System.Windows.Forms.ToolStripMenuItem círculoBresenhamToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem rellenoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem floodFillToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem scanLineFillToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem boundaryFillToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem recorteDeLíneasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cohenSutherlandToolStripMenuItem;
     }
 }

@@ -46,19 +46,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CBoundaryFill.cs" />
     <Compile Include="CBresenhamAlgorithm.cs" />
     <Compile Include="CBresenhamCircle.cs" />
     <Compile Include="CCircle.cs" />
+    <Compile Include="CCohenSutherland.cs" />
     <Compile Include="CDDAAlgorithm.cs" />
     <Compile Include="CFloodFillAlgorithm.cs" />
     <Compile Include="CMidPointAlgorithm.cs" />
     <Compile Include="CMidpointCircleAlgorithm.cs" />
     <Compile Include="CParametricCircleAlgorithm.cs" />
+    <Compile Include="CScanlineFill.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBoundaryFill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBoundaryFill.Designer.cs">
+      <DependentUpon>FrmBoundaryFill.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmBresenham.cs">
       <SubType>Form</SubType>
@@ -83,6 +92,12 @@
     </Compile>
     <Compile Include="FrmCircleParametric.Designer.cs">
       <DependentUpon>FrmCircleParametric.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCohenSutherland.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCohenSutherland.Designer.cs">
+      <DependentUpon>FrmCohenSutherland.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmDDA.cs">
       <SubType>Form</SubType>
@@ -114,11 +129,11 @@
     <Compile Include="frmMidpointCircle.Designer.cs">
       <DependentUpon>frmMidpointCircle.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmNew.cs">
+    <Compile Include="FrmScanlineFill.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmNew.Designer.cs">
-      <DependentUpon>FrmNew.cs</DependentUpon>
+    <Compile Include="FrmScanlineFill.Designer.cs">
+      <DependentUpon>FrmScanlineFill.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

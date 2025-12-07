@@ -72,5 +72,26 @@ namespace FormPartenerAndChild
             frm.MdiParent = this;
             frm.Show();
         }
+
+        private void scanLineFillToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmScanlineFill frm = new FrmScanlineFill();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void boundaryFillToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmBoundaryFill frm = new FrmBoundaryFill();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void cohenSutherlandToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmCohenSutherland frm = new FrmCohenSutherland();
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
 }
