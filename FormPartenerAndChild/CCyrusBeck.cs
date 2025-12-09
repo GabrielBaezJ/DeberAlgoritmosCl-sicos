@@ -6,39 +6,39 @@ using System.Linq;
 namespace FormPartenerAndChild
 {
     /// <summary>
-    /// Provides the Cyrus-Beck line clipping algorithm for clipping line segments against a convex polygon.
-    /// The polygon must be convex and is normalized to counter-clockwise winding if necessary.
-    /// All public methods validate inputs and throw ArgumentException for invalid parameters.
+    /// Proporciona el algoritmo de recorte de segmentos Cyrus-Beck para recortar contra un polígono convexo.
+    /// El polígono debe ser convexo y se normaliza a sentido antihorario si es necesario.
+    /// Todos los métodos públicos validan las entradas y lanzan ArgumentException para parámetros inválidos.
     /// </summary>
     internal static class CCyrusBeck
     {
         private const float EPSILON = 1e-6f;
 
         /// <summary>
-        /// Clips a single line segment against a convex polygon using the Cyrus-Beck algorithm.
-        /// Returns true if a visible portion exists inside the polygon; clippedP0/clippedP1 contain the clipped segment.
-        /// The polygon must contain at least 3 vertices and be convex. The method will attempt to normalize winding.
+        /// Recorta un segmento contra un polígono convexo usando el algoritmo Cyrus-Beck.
+        /// Devuelve true si existe una porción visible dentro del polígono; clippedP0/clippedP1 contienen el segmento recortado.
+        /// El polígono debe tener al menos 3 vértices y ser convexo. El método intentará normalizar el sentido si es necesario.
         /// </summary>
-        /// <param name="polygon">Convex polygon vertices (any starting vertex). The method will accept CCW or CW and normalize to CCW.</param>
-        /// <param name="p0">Line segment start point.</param>
-        /// <param name="p1">Line segment end point.</param>
-        /// <param name="clippedP0">Output clipped start point if returned true.</param>
-        /// <param name="clippedP1">Output clipped end point if returned true.</param>
-        /// <returns>True if the segment (or portion) lies inside the polygon.</returns>
+        /// <param name="polygon">Vértices del polígono convexo (se acepta CW o CCW; se normaliza a CCW).</param>
+        /// <param name="p0">Punto inicial del segmento.</param>
+        /// <param name="p1">Punto final del segmento.</param>
+        /// <param name="clippedP0">Salida: inicio del segmento recortado si retorna true.</param>
+        /// <param name="clippedP1">Salida: fin del segmento recortado si retorna true.</param>
+        /// <returns>True si el segmento (o su porción) yace dentro del polígono.</returns>
         public static bool ClipSegment(IList<PointF> polygon, PointF p0, PointF p1, out PointF clippedP0, out PointF clippedP1)
         {
             if (polygon == null) throw new ArgumentNullException(nameof(polygon));
-            if (polygon.Count < 3) throw new ArgumentException("Polygon must have at least 3 vertices.", nameof(polygon));
+            if (polygon.Count < 3) throw new ArgumentException("El polígono debe tener al menos 3 vértices.", nameof(polygon));
             if (Math.Abs(p0.X - p1.X) < EPSILON && Math.Abs(p0.Y - p1.Y) < EPSILON)
-                throw new ArgumentException("Segment endpoints must not be identical.", nameof(p0));
+                throw new ArgumentException("Los extremos del segmento no deben ser idénticos.", nameof(p0));
 
-            // Work on a copy to avoid mutating caller's list
+            // Trabajar sobre una copia para no mutar la lista del llamador
             var poly = polygon.ToList();
 
-            // Ensure polygon has CCW winding. If not, reverse.
+            // Asegurar sentido antihorario (CCW). Si no es así, invertir.
             float area = SignedArea(poly);
             if (Math.Abs(area) < EPSILON)
-                throw new ArgumentException("Polygon area is zero or degenerate.", nameof(polygon));
+                throw new ArgumentException("El área del polígono es nula o degenerada.", nameof(polygon));
 
             if (area < 0)
             {
@@ -47,11 +47,11 @@ namespace FormPartenerAndChild
 
             if (!IsConvex(poly))
             {
-                throw new ArgumentException("Polygon must be convex.", nameof(polygon));
+                throw new ArgumentException("El polígono debe ser convexo.", nameof(polygon));
             }
 
-            float tE = 0.0f; // maximum entering t
-            float tL = 1.0f; // minimum leaving t
+            float tE = 0.0f; // parámetro máximo de entrada
+            float tL = 1.0f; // parámetro mínimo de salida
 
             var d = new PointF(p1.X - p0.X, p1.Y - p0.Y);
 
@@ -60,29 +60,29 @@ namespace FormPartenerAndChild
                 var vi = poly[i];
                 var vj = poly[(i + 1) % poly.Count];
 
-                // Edge vector
+                // Vector arista
                 var edge = new PointF(vj.X - vi.X, vj.Y - vi.Y);
 
-                // Outward normal for CCW polygon: (edge.Y, -edge.X)
+                // Normal hacia el exterior para polígono CCW: (edge.Y, -edge.X)
                 var n = new PointF(edge.Y, -edge.X);
 
-                // Compute numerator and denominator
+                // Calcular numerador y denominador
                 var numerator = Dot(n, new PointF(vi.X - p0.X, vi.Y - p0.Y));
                 var denominator = Dot(n, d);
 
                 if (Math.Abs(denominator) < EPSILON)
                 {
-                    // Line is parallel to this edge
+                    // Línea paralela a esta arista
                     if (numerator < 0)
                     {
-                        // Outside the polygon
+                        // Fuera del polígono
                         clippedP0 = PointF.Empty;
                         clippedP1 = PointF.Empty;
                         return false;
                     }
                     else
                     {
-                        // Parallel but inside or on the edge: no constraint from this edge
+                        // Paralela pero dentro o en el borde: sin restricción
                         continue;
                     }
                 }
@@ -91,16 +91,16 @@ namespace FormPartenerAndChild
 
                 if (denominator < 0)
                 {
-                    // Potentially entering
+                    // Potencialmente entrando
                     if (t > tE) tE = t;
                 }
                 else
                 {
-                    // denominator > 0: potentially leaving
+                    // denominator > 0: potencialmente saliendo
                     if (t < tL) tL = t;
                 }
 
-                // Early rejection
+                // Rechazo temprano
                 if (tE - tL > EPSILON)
                 {
                     clippedP0 = PointF.Empty;
@@ -116,7 +116,7 @@ namespace FormPartenerAndChild
                 return false;
             }
 
-            // Compute clipped points (clamp within [0,1])
+            // Calcular puntos recortados (clamp en [0,1])
             float ct0 = Math.Max(0.0f, tE);
             float ct1 = Math.Min(1.0f, tL);
 
@@ -133,12 +133,12 @@ namespace FormPartenerAndChild
         }
 
         /// <summary>
-        /// Clips multiple segments against the convex polygon and returns the list of visible segments.
-        /// Degenerate input segments are ignored. Performs argument validation.
+        /// Recorta múltiples segmentos contra el polígono convexo y devuelve la lista de segmentos visibles.
+        /// Se ignoran segmentos degenerados. Realiza validación de argumentos.
         /// </summary>
-        /// <param name="polygon">Convex polygon vertices.</param>
-        /// <param name="segments">Enumerable of segments (start,end).</param>
-        /// <returns>List of clipped segments.</returns>
+        /// <param name="polygon">Vértices del polígono convexo.</param>
+        /// <param name="segments">Colección de segmentos (inicio, fin).</param>
+        /// <returns>Lista de segmentos recortados.</returns>
         public static List<(PointF, PointF)> ClipSegments(IList<PointF> polygon, IEnumerable<(PointF, PointF)> segments)
         {
             if (polygon == null) throw new ArgumentNullException(nameof(polygon));
@@ -150,7 +150,7 @@ namespace FormPartenerAndChild
             {
                 try
                 {
-                    // Skip degenerate
+                    // Omitir degenerados
                     if (Math.Abs(s.Item1.X - s.Item2.X) < EPSILON && Math.Abs(s.Item1.Y - s.Item2.Y) < EPSILON)
                         continue;
 
@@ -159,8 +159,7 @@ namespace FormPartenerAndChild
                 }
                 catch (ArgumentException)
                 {
-                    // If polygon is invalid or segment invalid, skip this segment but continue processing others.
-                    // This prevents the application from crashing on malformed input.
+                    // Si el polígono o segmento es inválido, ignorar y continuar con los demás
                     continue;
                 }
             }
@@ -168,7 +167,7 @@ namespace FormPartenerAndChild
             return result;
         }
 
-        #region Helper methods
+        #region Métodos auxiliares
 
         private static float Dot(PointF a, PointF b)
         {
@@ -177,7 +176,7 @@ namespace FormPartenerAndChild
 
         private static float SignedArea(IList<PointF> poly)
         {
-            // Compute signed area using shoelace formula
+            // Calcular área firmada usando la fórmula del zapatero
             float area = 0;
             for (int i = 0; i < poly.Count; i++)
             {
@@ -190,7 +189,7 @@ namespace FormPartenerAndChild
 
         private static bool IsConvex(IList<PointF> poly)
         {
-            // A polygon is convex if all cross products of consecutive edges have the same sign
+            // Un polígono es convexo si todos los productos cruz de aristas consecutivas tienen el mismo signo
             int n = poly.Count;
             if (n < 3) return false;
 
@@ -208,7 +207,7 @@ namespace FormPartenerAndChild
 
                 float cross = dx1 * dy2 - dy1 * dx2;
 
-                if (Math.Abs(cross) < EPSILON) continue; // collinear
+                if (Math.Abs(cross) < EPSILON) continue; // colineal
 
                 int currentSign = cross > 0 ? 1 : -1;
                 if (sign == 0) sign = currentSign;

@@ -6,37 +6,38 @@ using System.Linq;
 namespace FormPartenerAndChild
 {
     /// <summary>
-    /// Implements the Sutherland–Hodgman polygon clipping algorithm.
-    /// Clips a subject polygon against a (preferably convex) clipping polygon.
-    /// The implementation validates inputs and will throw informative exceptions for invalid data.
+    /// Implementa el algoritmo de recorte de polígonos Sutherland–Hodgman.
+    /// Recorta un polígono sujeto contra un polígono de recorte (preferiblemente convexo).
+    /// La implementación valida entradas y lanzará excepciones informativas para datos inválidos.
     /// </summary>
     internal static class CSutherlandHodgman
     {
         private const float EPSILON = 1e-6f;
 
         /// <summary>
-        /// Clips the subject polygon against the clip polygon using the Sutherland–Hodgman algorithm.
-        /// Both polygons must contain at least 3 vertices. The clip polygon should be convex for correct results.
-        /// Returns a new polygon representing the clipped result (may be empty if no overlap).
+        /// Recorta el polígono sujeto contra el polígono de recorte usando el algoritmo Sutherland–Hodgman.
+        /// Ambos polígonos deben contener al menos 3 vértices. El polígono de recorte debería ser convexo
+        /// para obtener resultados correctos. Devuelve un nuevo polígono que representa el resultado del recorte
+        /// (puede estar vacío si no hay solapamiento).
         /// </summary>
-        /// <param name="subject">Subject polygon vertices (may be concave).</param>
-        /// <param name="clip">Clip polygon vertices (should be convex).</param>
-        /// <returns>Clipped polygon vertices (possibly empty).</returns>
+        /// <param name="subject">Vértices del polígono sujeto (puede ser cóncavo).</param>
+        /// <param name="clip">Vértices del polígono de recorte (debería ser convexo).</param>
+        /// <returns>Vértices del polígono recortado (posiblemente vacío).</returns>
         public static List<PointF> ClipPolygon(IList<PointF> subject, IList<PointF> clip)
         {
             if (subject == null) throw new ArgumentNullException(nameof(subject));
             if (clip == null) throw new ArgumentNullException(nameof(clip));
-            if (subject.Count < 3) throw new ArgumentException("Subject polygon must have at least 3 vertices.", nameof(subject));
-            if (clip.Count < 3) throw new ArgumentException("Clip polygon must have at least 3 vertices.", nameof(clip));
+            if (subject.Count < 3) throw new ArgumentException("El polígono sujeto debe tener al menos 3 vértices.", nameof(subject));
+            if (clip.Count < 3) throw new ArgumentException("El polígono de recorte debe tener al menos 3 vértices.", nameof(clip));
 
-            // Prefer clipping polygon to be convex, warn if not (throwing to enforce stricter behavior)
+            // Preferimos que el polígono de recorte sea convexo; si no lo es, lanzamos excepción para comportamiento estricto
             if (!IsConvex(clip))
-                throw new ArgumentException("Clip polygon must be convex for reliable results.", nameof(clip));
+                throw new ArgumentException("El polígono de recorte debe ser convexo para resultados fiables.", nameof(clip));
 
-            // Work on copies
+            // Trabajar sobre copias
             var outputList = subject.ToList();
 
-            // Iterate over clip edges
+            // Iterar sobre las aristas del polígono de recorte
             for (int i = 0; i < clip.Count; i++)
             {
                 var inputList = outputList.ToList();
@@ -45,9 +46,9 @@ namespace FormPartenerAndChild
                 var A = clip[i];
                 var B = clip[(i + 1) % clip.Count];
 
-                if (inputList.Count == 0) break; // nothing to clip
+                if (inputList.Count == 0) break; // nada que recortar
 
-                PointF S = inputList[inputList.Count - 1]; // last vertex
+                PointF S = inputList[inputList.Count - 1]; // último vértice
 
                 foreach (var E in inputList)
                 {
@@ -56,46 +57,46 @@ namespace FormPartenerAndChild
 
                     if (Sin && Ein)
                     {
-                        // both inside
+                        // ambos dentro
                         outputList.Add(E);
                     }
                     else if (Sin && !Ein)
                     {
-                        // leaving -- add intersection
+                        // saliendo -- agregar intersección
                         if (TryIntersect(S, E, A, B, out var ip))
                             outputList.Add(ip);
                     }
                     else if (!Sin && Ein)
                     {
-                        // entering -- add intersection then E
+                        // entrando -- agregar intersección luego E
                         if (TryIntersect(S, E, A, B, out var ip))
                             outputList.Add(ip);
                         outputList.Add(E);
                     }
-                    // else both outside -> do nothing
+                    // si ambos fuera -> no hacer nada
 
                     S = E;
                 }
             }
 
-            // Remove nearly-duplicate consecutive points
+            // Eliminar puntos consecutivos casi duplicados
             outputList = RemoveDuplicatePoints(outputList);
 
             return outputList;
         }
 
-        #region Geometry helpers
+        #region Ayudantes geométricos
 
-        // Determines if point P is inside the half-plane defined by edge AB (assuming clip polygon is CCW)
+        // Determina si el punto P está dentro del semiplano definido por la arista AB (suponiendo polígono clip CCW)
         private static bool IsInside(PointF A, PointF B, PointF P)
         {
-            // For clip edge AB, the inside is to the left of the directed edge (A->B) for CCW polygon
+            // Para la arista AB, el interior está a la izquierda de la arista dirigida (A->B) para polígono CCW
             var cross = (B.X - A.X) * (P.Y - A.Y) - (B.Y - A.Y) * (P.X - A.X);
-            return cross >= -EPSILON; // allow points on edge
+            return cross >= -EPSILON; // permitir puntos sobre la arista
         }
 
-        // Attempts to compute intersection between segment S->E and the infinite line AB.
-        // Returns false if segments are parallel and no intersection.
+        // Intenta calcular la intersección entre el segmento S->E y la recta infinita AB.
+        // Devuelve false si son paralelos y no hay intersección útil.
         private static bool TryIntersect(PointF S, PointF E, PointF A, PointF B, out PointF intersection)
         {
             intersection = PointF.Empty;
@@ -110,18 +111,18 @@ namespace FormPartenerAndChild
 
             if (Math.Abs(denom) < EPSILON)
             {
-                // Parallel or collinear
+                // Paralelo o colineal
                 return false;
             }
 
-            // Solve for parameters: S + t*(E-S) intersects A + u*(B-A)
+            // Resolver parámetros: S + t*(E-S) intersecta A + u*(B-A)
             float t = ((A.X - S.X) * dyAB - (A.Y - S.Y) * dxAB) / denom;
 
             intersection = new PointF(S.X + t * dxSE, S.Y + t * dySE);
             return true;
         }
 
-        // Check polygon convexity (simple O(n) test)
+        // Comprobar convexidad de un polígono (test O(n) simple)
         private static bool IsConvex(IList<PointF> poly)
         {
             int n = poly.Count;
@@ -164,7 +165,7 @@ namespace FormPartenerAndChild
                 }
             }
 
-            // Close check: if first and last duplicate, remove last
+            // Comprobación de cierre: si primer y último son iguales, quitar el último
             if (res.Count > 1)
             {
                 var first = res[0];

@@ -54,12 +54,14 @@
     <Compile Include="CCyrusBeck.cs" />
     <Compile Include="CDDAAlgorithm.cs" />
     <Compile Include="CFloodFillAlgorithm.cs" />
+    <Compile Include="CGreinerHormann.cs" />
     <Compile Include="CLiangBarsky.cs" />
     <Compile Include="CMidPointAlgorithm.cs" />
     <Compile Include="CMidpointCircleAlgorithm.cs" />
     <Compile Include="CParametricCircleAlgorithm.cs" />
     <Compile Include="CScanlineFill.cs" />
     <Compile Include="CSutherlandHodgman.cs" />
+    <Compile Include="CWeilerAtherton.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +122,12 @@
     <Compile Include="FrmFloodFill.Designer.cs">
       <DependentUpon>FrmFloodFill.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmGreinerHormann.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGreinerHormann.Designer.cs">
+      <DependentUpon>FrmGreinerHormann.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmHome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -156,6 +164,12 @@
     <Compile Include="FrmSutherlandHodgman.Designer.cs">
       <DependentUpon>FrmSutherlandHodgman.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmWeilerAtherton.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmWeilerAtherton.Designer.cs">
+      <DependentUpon>FrmWeilerAtherton.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmHome.resx">
@@ -170,6 +184,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="ANALISIS_COMPARATIVO_TABLAS.md" />
+    <None Include="INFORME_COMPLETO_ALGORITMOS.md" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

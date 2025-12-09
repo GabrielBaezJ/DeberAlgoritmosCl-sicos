@@ -48,6 +48,8 @@
             this.cyrusBeckToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.recorteDePolígonosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sutherlandHodgmanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.weilerAthertonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.greinerHormannToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -200,7 +202,9 @@
             // recorteDePolígonosToolStripMenuItem
             // 
             this.recorteDePolígonosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.sutherlandHodgmanToolStripMenuItem});
+            this.sutherlandHodgmanToolStripMenuItem,
+            this.weilerAthertonToolStripMenuItem,
+            this.greinerHormannToolStripMenuItem});
             this.recorteDePolígonosToolStripMenuItem.Name = "recorteDePolígonosToolStripMenuItem";
             this.recorteDePolígonosToolStripMenuItem.Size = new System.Drawing.Size(131, 20);
             this.recorteDePolígonosToolStripMenuItem.Text = "Recorte de Polígonos";
@@ -211,6 +215,20 @@
             this.sutherlandHodgmanToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
             this.sutherlandHodgmanToolStripMenuItem.Text = "Sutherland - Hodgman";
             this.sutherlandHodgmanToolStripMenuItem.Click += new System.EventHandler(this.sutherlandHodgmanToolStripMenuItem_Click);
+            // 
+            // weilerAthertonToolStripMenuItem
+            // 
+            this.weilerAthertonToolStripMenuItem.Name = "weilerAthertonToolStripMenuItem";
+            this.weilerAthertonToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
+            this.weilerAthertonToolStripMenuItem.Text = "Weiler - Atherton";
+            this.weilerAthertonToolStripMenuItem.Click += new System.EventHandler(this.weilerAthertonToolStripMenuItem_Click);
+            // 
+            // greinerHormannToolStripMenuItem
+            // 
+            this.greinerHormannToolStripMenuItem.Name = "greinerHormannToolStripMenuItem";
+            this.greinerHormannToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
+            this.greinerHormannToolStripMenuItem.Text = "Greiner - Hormann";
+            this.greinerHormannToolStripMenuItem.Click += new System.EventHandler(this.greinerHormannToolStripMenuItem_Click);
             // 
             // FrmHome
             // 
@@ -251,5 +269,7 @@
         private System.Windows.Forms.ToolStripMenuItem cyrusBeckToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem recorteDePolígonosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sutherlandHodgmanToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem weilerAthertonToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem greinerHormannToolStripMenuItem;
     }
 }

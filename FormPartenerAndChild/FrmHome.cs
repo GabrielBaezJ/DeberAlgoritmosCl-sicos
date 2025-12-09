@@ -114,5 +114,19 @@ namespace FormPartenerAndChild
             frm.MdiParent = this;
             frm.Show();
         }
+
+        private void weilerAthertonToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmWeilerAtherton frm = new FrmWeilerAtherton();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void greinerHormannToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmGreinerHormann frm = new FrmGreinerHormann();
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
 }
