@@ -93,5 +93,26 @@ namespace FormPartenerAndChild
             frm.MdiParent = this;
             frm.Show();
         }
+
+        private void liangBarskyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmLiangBarsky frm = new FrmLiangBarsky();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void cyrusBeckToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmCyrusBeck frm = new FrmCyrusBeck();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void sutherlandHodgmanToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmSutherlandHodgman frm = new FrmSutherlandHodgman();
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
 }

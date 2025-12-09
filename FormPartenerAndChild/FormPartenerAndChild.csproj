@@ -51,12 +51,15 @@
     <Compile Include="CBresenhamCircle.cs" />
     <Compile Include="CCircle.cs" />
     <Compile Include="CCohenSutherland.cs" />
+    <Compile Include="CCyrusBeck.cs" />
     <Compile Include="CDDAAlgorithm.cs" />
     <Compile Include="CFloodFillAlgorithm.cs" />
+    <Compile Include="CLiangBarsky.cs" />
     <Compile Include="CMidPointAlgorithm.cs" />
     <Compile Include="CMidpointCircleAlgorithm.cs" />
     <Compile Include="CParametricCircleAlgorithm.cs" />
     <Compile Include="CScanlineFill.cs" />
+    <Compile Include="CSutherlandHodgman.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +102,12 @@
     <Compile Include="FrmCohenSutherland.Designer.cs">
       <DependentUpon>FrmCohenSutherland.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmCyrusBeck.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCyrusBeck.Designer.cs">
+      <DependentUpon>FrmCyrusBeck.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmDDA.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +126,12 @@
     <Compile Include="FrmHome.Designer.cs">
       <DependentUpon>FrmHome.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmLiangBarsky.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLiangBarsky.Designer.cs">
+      <DependentUpon>FrmLiangBarsky.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmMidPoint.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +149,12 @@
     </Compile>
     <Compile Include="FrmScanlineFill.Designer.cs">
       <DependentUpon>FrmScanlineFill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSutherlandHodgman.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSutherlandHodgman.Designer.cs">
+      <DependentUpon>FrmSutherlandHodgman.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
